@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Список автомобилей</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            font-family: Arial, sans-serif;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #e9f5e9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+<h1>Список автомобилей</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Модель</th>
+        <th>Цвет</th>
+        <th>Год выпуска</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.model}"></td>
+        <td th:text="${car.color}"></td>
+        <td th:text="${car.year}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
